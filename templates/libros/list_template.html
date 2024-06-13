@@ -1,0 +1,26 @@
+{% extends "main_template.html" %}
+
+{% block tab%}ACME | Biblioteca - Libros{% endblock tab%}
+
+{% block title%}libros{% endblock title%}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ISBN</th>
+                <th scope="col">Título</th>
+                <th scope="col">Editorial</th>
+            </tr>
+        </thead>
+      <tbody class="table-group-divider">
+      {% for user in users %}
+        <tr>
+          <td>{{ user.isbn }}</td>
+          <td>{{ user.titulo }}</td>
+          <td>{{ user.editorial }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+{% endblock content %}

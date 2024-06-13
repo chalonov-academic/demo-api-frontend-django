@@ -1,0 +1,41 @@
+{% extends "main_template.html" %}
+
+{% block tab%}ACME | Biblioteca - Libros{% endblock tab%}
+
+{% block title%}libros{% endblock title%}
+
+{% block content %}
+
+    <div class="container mt-2">
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.numeroIsbn.label_tag }}
+                {{ form.numeroIsbn }}
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
+        </form>
+    </div>
+
+    {% if information != "null" %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ISBN</th>
+                    <th scope="col">Título</th>
+                    <th scope="col">Editorial</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr>
+                    <td>{{ users.isbn }}</td>
+                    <td>{{ users.titulo }}</td>
+                    <td>{{ users.editorial }}</td>
+                </tr>
+            </tbody>
+        </table>
+        {% else %}
+            <h4>No se encontró nada</h4>
+        {% endif %}
+
+{% endblock content %}

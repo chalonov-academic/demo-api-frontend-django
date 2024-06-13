@@ -1,0 +1,24 @@
+{% extends "main_template.html" %}
+
+{% block tab%}ACME | Biblioteca - Autores{% endblock tab%}
+
+{% block title%}autores{% endblock title%}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+            </tr>
+        </thead>
+      <tbody class="table-group-divider">
+        <tr>
+          <td>{{ users.id }}</td>
+          <td>{{ users.nombre }}</td>
+          <td>{{ users.apellido }}</td>
+        </tr>
+      </tbody>
+    </table>
+{% endblock content %}
